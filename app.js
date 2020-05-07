@@ -2,10 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-require('dotenv/config');
-
-
 const jobsRouter = require('./server/routes/jobRoutes');
+require('dotenv/config');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,7 +22,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   () => console.log("connected to db")
 });
-
 
 // ROUTES
 app.use('/api/jobs/', jobsRouter);

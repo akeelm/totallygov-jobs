@@ -41,7 +41,7 @@ router.post('/search', async (req, res) => {
 });
 
 
-//SPECIFIC JOB
+// SPECIFIC JOB
 router.get('/:jobId', async (req, res) => {
     try {
         const job = await Job.findById(req.params.jobId);
