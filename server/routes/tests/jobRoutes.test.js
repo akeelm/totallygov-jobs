@@ -11,3 +11,13 @@ it('should seed the data',  async () => {
     const response = await request(app).get('/api/jobs');
     expect(response.body.length).toBe(jobMocks.length);
 });
+
+it('should be able to search the jobs', async () => {
+    const response = await request(app)
+      .post('/api/jobs/search')
+      .send({ search: "russian" })
+      .set('Content-Type', 'application/json')
+      .set('Accept', 'application/json');
+
+    expect(response.body[0].title).toBe('Spy');
+});

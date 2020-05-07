@@ -16,8 +16,28 @@ router.get('/', async (req, res) => {
 
         res.json(jobs);
     } catch (err) {
-        res.json({ message: err })
+        res.json({ message: err });
     }
 });
+
+
+// SEARCH JOBS
+router.post('/search', async (req, res) => {
+    const searchStr = req.body.search;
+    try {
+        const jobs = await Job.find({
+          $or: [
+              { title: new RegExp(searchStr, "i") },
+              { description: new RegExp(searchStr, "i") },
+              { author: new RegExp(searchStr, "i") }
+            ],
+        });
+
+        res.json(jobs);
+    }
+    catch (err) {
+        res.json({ message: err });
+    }
+})
 
 module.exports = router;
