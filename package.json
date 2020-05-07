@@ -4,7 +4,8 @@
 	"scripts": {
 		"client": "cd client && yarn start",
 		"server": "nodemon server.js",
-		"start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+		"start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+		"test": "jest"
 	},
 	"dependencies": {
 		"body-parser": "^1.19.0",
@@ -14,6 +15,8 @@
 		"nodemon": "^2.0.3"
 	},
 	"devDependencies": {
-		"concurrently": "^5.2.0"
+		"@shelf/jest-mongodb": "^1.1.5",
+		"concurrently": "^5.2.0",
+		"jest": "^26.0.1"
 	}
 }
