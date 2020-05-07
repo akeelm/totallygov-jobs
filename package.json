@@ -16,7 +16,9 @@
 	},
 	"devDependencies": {
 		"@shelf/jest-mongodb": "^1.1.5",
+		"babel-jest": "^24.9.0",
 		"concurrently": "^5.2.0",
-		"jest": "^26.0.1"
+		"jest": "^26",
+		"supertest": "^4.0.2"
 	}
 }
