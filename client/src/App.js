@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [apiResponse, setApiResponse] = useState('');
+
+  useEffect(async () => {
+    try {
+      const response = await fetch('/api/hello');
+      const body = await response.json();
+      setApiResponse(JSON.stringify(body));
+    } catch (err) {
+      setApiResponse(`error: ${err}`);
+    }
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +28,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {apiResponse}
         </a>
       </header>
     </div>
