@@ -1,12 +1,8 @@
 const mongoose = require('mongoose');
 const JobModel = require('./../Job');
+const mocks = require('./../../mocks/job.mocks');
 
-const testJobData = {
-  title: "Agrarian worker",
-  description:
-    "We're currently seeking a number of agrarian workers to grow crops",
-  author: "Pol Pot Jr.",
-};
+const testJobData = mocks[0];
 
 beforeAll(async () => {
     await mongoose.connect(
