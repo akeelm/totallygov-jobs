@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 
         // Seed if no jobs
         if (jobs.length === 0) {
-            seedJobs();
+            await seedJobs();
             jobs = await Job.find();
         }
 

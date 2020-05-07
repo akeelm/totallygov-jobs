@@ -1,9 +1,11 @@
 const JobModel = require('./../models/Job');
 const jobMocks = require('./job.mocks');
 
-module.exports = () => {
+module.exports = async () => {
+    const jobsPromises = [];
     jobMocks.forEach((job) => {
         const jobModel = new JobModel(job);
-        jobModel.save();
+        jobsPromises.push(jobModel.save());
     });
+    await Promise.all(jobsPromises);
 };
