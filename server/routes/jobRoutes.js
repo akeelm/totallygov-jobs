@@ -38,6 +38,17 @@ router.post('/search', async (req, res) => {
     catch (err) {
         res.json({ message: err });
     }
-})
+});
+
+
+//SPECIFIC JOB
+router.get('/:jobId', async (req, res) => {
+    try {
+        const job = await Job.findById(req.params.jobId);
+        res.json(job);
+    } catch (err) {
+        res.json(err);
+    }
+});
 
 module.exports = router;
