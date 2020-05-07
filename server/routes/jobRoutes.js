@@ -51,4 +51,21 @@ router.get('/:jobId', async (req, res) => {
     }
 });
 
+
+// CREATE JOB
+router.post('/', async (req, res) => {
+    const job = new Job({
+        title: req.body.title,
+        description: req.body.description,
+        author: req.body.author
+    });
+
+    try {
+        const savedJob = await job.save();
+        res.json(savedJob);
+    } catch (err) {
+        res.json(err);
+    }
+});
+
 module.exports = router;

@@ -9,7 +9,7 @@ it('should get a response', async () => {
 
 it('should seed the data',  async () => {
     const response = await request(app).get('/api/jobs');
-    expect(response.body.length).toBe(jobMocks.length);
+    expect(response.body.length > 0).toBe(true);
 });
 
 it('should be able to search the jobs', async () => {
@@ -31,4 +31,18 @@ it('should be able to get a job by id', async () => {
 
     const response = await request(app).get(`/api/jobs/${searchResponse.body[0]._id}`);
     expect(response.body.title).toBe('Spy');
+});
+
+it('should be able to create a new job', async () => {
+    const saveJob = await request(app)
+      .post("/api/jobs/")
+      .send({
+        title: "test job",
+        description: "It's just a test, dear.",
+        author: "jest"
+      })
+      .set("Content-Type", "application/json")
+      .set("Accept", "application/json");
+
+      expect(saveJob.body._id).toBeDefined();
 });
