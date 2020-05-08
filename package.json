@@ -3,22 +3,14 @@
 	"version": "1.0.0",
 	"scripts": {
 		"client": "cd client && yarn start",
-		"server": "nodemon server.js",
+		"server": "cd server && node server.js",
 		"start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-		"test": "jest"
+		"testserver": "cd server && jest",
+		"testclient": "cd client && jest",
+		"test": "concurrently --kill-others-on-fail \"yarn testserver\" \"yarn testclient\""
 	},
 	"dependencies": {
-		"body-parser": "^1.19.0",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"mongoose": "^5.9.12",
-		"nodemon": "^2.0.3"
-	},
-	"devDependencies": {
-		"@shelf/jest-mongodb": "^1.1.5",
-		"babel-jest": "^24.9.0",
-		"concurrently": "^5.2.0",
-		"jest": "^26",
-		"supertest": "^4.0.2"
+		"totallygov-jobs": "file:client",
+		"totallygov-jobs-express-server": "file:server"
 	}
 }

@@ -1,38 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 import './App.css';
 
 function App() {
-  const [apiResponse, setApiResponse] = useState('');
-
-  useEffect(async () => {
-    try {
-      const response = await fetch('/api/hello');
-      const body = await response.json();
-      setApiResponse(JSON.stringify(body));
-    } catch (err) {
-      setApiResponse(`error: ${err}`);
-    }
-  }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {apiResponse}
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Job listings</Link>
+            </li>
+            <li>
+              <Link to="/job/:id">Job listing</Link>
+            </li>
+            <li>
+              <Link to="/create">Create job listing</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/job/:id">
+            <JobListing />
+          </Route>
+          <Route path="/create">
+            <CreateListing />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
+}
+
+function Home() {
+  return <h2>Job Listings</h2>;
+}
+
+function JobListing() {
+  const { id } = useParams();
+  return <h2>{id}</h2>
+}
+
+function CreateListing() {
+  return <h2>Create Listing</h2>
 }
 
 export default App;

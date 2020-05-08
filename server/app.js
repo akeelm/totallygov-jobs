@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-const jobsRouter = require('./server/routes/jobRoutes');
+const jobsRouter = require('./routes/jobRoutes');
 require('dotenv/config');
 
 app.use(bodyParser.json());
