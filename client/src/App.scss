@@ -1,0 +1,59 @@
+@import './base.scss';
+
+.page-container {
+  height: 100vh;
+}
+
+.page-content {
+  padding: 20px;
+  padding-top: 140px;
+  min-height: 80%;
+  background-color: $light;
+}
+
+.header {
+  position: fixed;
+  background-color: $medium;
+  top: 0;
+  width: 100vw;
+}
+
+.header__contents {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+
+.header__title {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.header__title__text {
+  color: $color1;
+  font-size: 3em;
+}
+
+.header__title__sub {
+  color: $color2;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.header__add-buton {
+  align-self: flex-end;
+}
+
+
+.nav {
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline-start: 0;
+  }
+  li {
+    list-style: none;
+  }
+}

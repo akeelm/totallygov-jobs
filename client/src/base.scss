@@ -1,0 +1,28 @@
+$color1: #eb6383;
+$color2: #fa9191;
+$color3: #ffe9c5;
+$color4: #b4f2e1;
+$color5: #2f4f4f;
+
+$light: #eee;
+$very-light: #fafafa;
+$medium: #e4e4e4;
+
+a { 
+    color: $color4;
+    text-decoration: none;
+    &:hover {
+        color: darken($color: $color4, $amount: 10%);
+    }
+}
+
+
+.button {
+    background-color: $color4;
+    padding: 10px;
+    color: $color5;
+    border-radius: 2px;
+    &:hover{
+        background-color: darken($color: $color4, $amount: 10%);
+    }
+}

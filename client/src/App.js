@@ -6,38 +6,40 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-import './App.css';
+import './App.scss';
 
 function App() {
 
   return (
     <Router>
-      <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Job listings</Link>
-            </li>
-            <li>
-              <Link to="/job/:id">Job listing</Link>
-            </li>
-            <li>
-              <Link to="/create">Create job listing</Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="page-container">
+        <div className="header">
+          <div className="header__contents">
+            <Link to="/" className="header__title">
+              <span className="header__title__text">TotallyGov jobs</span>
+              <span className="header__title__sub">
+                Don't call us, we'll call you.
+              </span>
+            </Link>
+            <Link to="/create" className="header__add-buton">
+              <div className="button">+ Add job</div>
+            </Link>
+          </div>
+        </div>
 
-        <Switch>
-          <Route path="/job/:id">
-            <JobListing />
-          </Route>
-          <Route path="/create">
-            <CreateListing />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <div className="page-content">
+          <Switch>
+            <Route path="/job/:id">
+              <JobListing />
+            </Route>
+            <Route path="/create">
+              <CreateListing />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
       </div>
     </Router>
   );

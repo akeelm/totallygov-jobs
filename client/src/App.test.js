@@ -13,9 +13,9 @@ test('App rendering and routing test', () => {
     </Router>
   )
 
-  expect(container.innerHTML).toMatch('Job listings')
+  expect(container.innerHTML).toMatch('TotallyGov jobs')
 
-  fireEvent.click(getByText(/create job listing/i))
+  fireEvent.click(getByText(/Add job/i))
 
   expect(container.innerHTML).toMatch('Create Listing')
 })
