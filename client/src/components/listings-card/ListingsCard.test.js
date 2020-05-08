@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
+import { createMemoryHistory } from 'history'
+import { Router } from 'react-router-dom';
 import ListingsCard from './ListingsCard';
 
 const mockJob = {
@@ -12,8 +14,11 @@ const mockJob = {
 };
 
 test('renders a job', () => {
+  const history = createMemoryHistory()
   const { container } = render(
+    <Router history={history}>
       <ListingsCard job={mockJob} />
+    </Router>
   );
 
   expect(container.innerHTML).toMatch('Spy');

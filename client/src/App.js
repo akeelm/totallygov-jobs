@@ -4,13 +4,12 @@ import {
   Switch,
   Route,
   Link,
-  useParams
 } from "react-router-dom";
 import Listings from './components/listings/Listings';
+import Listing from './components/listing/Listing';
 import './App.scss';
 
 function App() {
-
   return (
     <Router>
       <div className="page-container">
@@ -31,7 +30,7 @@ function App() {
         <div className="page-content">
           <Switch>
             <Route path="/job/:id">
-              <JobListing />
+              <Listing />
             </Route>
             <Route path="/create">
               <CreateListing />
@@ -46,10 +45,6 @@ function App() {
   );
 }
 
-function JobListing() {
-  const { id } = useParams();
-  return <h2>{id}</h2>
-}
 
 function CreateListing() {
   return <h2>Create Listing</h2>

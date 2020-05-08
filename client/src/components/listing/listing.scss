@@ -1,0 +1,30 @@
+@import './../../base.scss';
+
+.listing {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+.listing__title {
+    color: $color1;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.listing__description {
+    color: $dark;
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+
+.listing__author {
+    color: $color2;
+    margin-top: 10px;
+}
+
+.listing__return {
+    color: $color5;
+}
