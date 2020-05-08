@@ -1,0 +1,27 @@
+@import './../../base.scss';
+
+.listing-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 2px;
+
+    &:hover {
+        background-color: darken($color: #fff, $amount: 10);
+    }
+}
+
+.listing-card__title {
+    color: $color1;
+    margin-bottom: 10px;
+}
+
+.listing-card__description {
+    color: $dark;
+    margin-bottom: 10px;
+}
+
+.listing-card__author {
+    color: $color2;
+    margin-top: 10px;
+}

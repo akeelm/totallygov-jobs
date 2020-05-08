@@ -6,6 +6,7 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+import Listings from './components/listings/Listings';
 import './App.scss';
 
 function App() {
@@ -36,17 +37,13 @@ function App() {
               <CreateListing />
             </Route>
             <Route path="/">
-              <Home />
+              <Listings />
             </Route>
           </Switch>
         </div>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Job Listings</h2>;
 }
 
 function JobListing() {

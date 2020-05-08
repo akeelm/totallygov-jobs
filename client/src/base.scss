@@ -8,6 +8,8 @@ $light: #eee;
 $very-light: #fafafa;
 $medium: #e4e4e4;
 
+$dark: #000d5e;
+
 a { 
     color: $color4;
     text-decoration: none;
@@ -15,7 +17,6 @@ a {
         color: darken($color: $color4, $amount: 10%);
     }
 }
-
 
 .button {
     background-color: $color4;
