@@ -1,6 +1,9 @@
 const request = require('supertest');
 const app = require('./../../app');
-const jobMocks = require('./../../mocks/job.mocks');
+const db = require('./../../test-db');
+
+beforeAll(async () => { await db.connect(); });
+afterAll(async () => { await db.closeDatabase(); });
 
 it('should get a response', async () => {
     const response = await request(app).get('/api/jobs');
@@ -9,7 +12,7 @@ it('should get a response', async () => {
 
 it('should seed the data',  async () => {
     const response = await request(app).get('/api/jobs');
-    expect(response.body.length > 0).toBe(true);
+    expect(response.body.length).toBe(5);
 });
 
 it('should be able to search the jobs', async () => {

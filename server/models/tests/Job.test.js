@@ -1,26 +1,11 @@
-const mongoose = require('mongoose');
 const JobModel = require('./../Job');
 const mocks = require('./../../mocks/job.mocks');
+const db = require('./../../test-db');
 
 const testJobData = mocks[0];
 
-beforeAll(async () => {
-    await mongoose.connect(
-      global.__MONGO_URI__,
-      { useNewUrlParser: true, useCreateIndex: true },
-      (err) => {
-        if (err) {
-          console.error(err);
-          process.exit(1);
-        }
-      }
-    );
-});
-
-afterAll(async (done) => {
-    await mongoose.connection.close();
-    done();
-});
+beforeAll(async () => { await db.connect(); });
+afterAll(async () => { await db.closeDatabase(); });
 
 it('should have a Job model', () => {
     expect(JobModel).toBeDefined();

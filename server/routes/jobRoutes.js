@@ -54,6 +54,16 @@ router.get('/:jobId', async (req, res) => {
 
 // CREATE JOB
 router.post('/', async (req, res) => {
+    try {
+        let jobs = await Job.find({
+            description: req.body.description,
+        });
+
+        if (jobs.length > 0) return res.json(jobs[0]);
+    } catch (err) {
+        res.json(err);
+    }
+
     const job = new Job({
         title: req.body.title,
         description: req.body.description,

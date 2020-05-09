@@ -4,7 +4,11 @@ const JobSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    description: String,
+    description: {
+        type: String,
+        required: true,
+        unique: true
+    },
     date: {
         type: Date,
         default: Date.now

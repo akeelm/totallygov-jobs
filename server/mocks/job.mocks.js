@@ -1,8 +1,8 @@
 module.exports = [
   {
-    title: "Agrarian worker",
-    description: "We're currently seeking a number of agrarian workers to grow crops",
-    author: "Pol Pot Jr.",
+    title: "Special social services worker",
+    description: "There are numerous children that I've bought into this world as result of my excellent virility. I need them to be kept quiet and monitored closely, so the public never find out how many offspring I actually have!",
+    author: "B. Johnson",
   },
   {
     title: "Spy",
@@ -20,8 +20,8 @@ module.exports = [
     author: "Nicolás Maduro",
   },
   {
-    title: "Fake news asssasin",
-    description: "I'm not totalitarian! FAKE NEWS!",
+    title: "Medical volunteer",
+    description: "Want to become a national hero and serve your country? Ever considered how clean your house is after using cleaning products? If it can do that to your worktops, imagine what it can do to your insides!?!",
     author: "Donald J. Trump",
   }
 ];
