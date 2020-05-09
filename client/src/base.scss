@@ -23,6 +23,8 @@ a {
     padding: 10px;
     color: $color5;
     border-radius: 2px;
+    width: fit-content;
+    cursor: pointer;
     &:hover{
         background-color: darken($color: $color4, $amount: 10%);
     }

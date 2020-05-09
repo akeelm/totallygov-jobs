@@ -17,5 +17,5 @@ test('App rendering and routing test', () => {
 
   fireEvent.click(getByText(/Add job/i))
 
-  expect(container.innerHTML).toMatch('Create Listing')
+  expect(container.innerHTML).toMatch('Add new job')
 })

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Listings from './components/listings/Listings';
 import Listing from './components/listing/Listing';
+import CreateListing from './components/create-listing/CreateListing';
 import './App.scss';
 
 function App() {
@@ -43,11 +44,6 @@ function App() {
       </div>
     </Router>
   );
-}
-
-
-function CreateListing() {
-  return <h2>Create Listing</h2>
 }
 
 export default App;

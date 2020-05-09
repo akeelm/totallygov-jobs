@@ -9,7 +9,7 @@ function Listing() {
         fetch(`/api/jobs/${id}`)
         .then(res => res.json())
         .then(setListing);
-    }, []);
+    }, [id]);
 
     return (
       <div>

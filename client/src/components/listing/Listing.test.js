@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react'
 import { createMemoryHistory } from 'history'
-import { MemoryRouter, matchPath, Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import Listing from './Listing';
 
 test('renders', () => {
