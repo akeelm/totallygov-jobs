@@ -2,8 +2,8 @@
 	"name": "totallygov-jobs-express",
 	"version": "1.0.0",
 	"scripts": {
-		"build": "cd client && yarn build",
-		"client": "cd client && yarn start",
+		"build": "cd client && npm run-script build",
+		"client": "cd client && npm start",
 		"server": "cd server && node server.js",
 		"start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
 		"testserver": "cd server && jest",
